@@ -16,7 +16,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User,primary_key=True, related_name="userprofile")
 
     GENDER_CHOICES = (
-        ('M', 'Males'),
+        ('M', 'Male'),
         ('F', 'Female'),
     )
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES,blank=True, null=True)
