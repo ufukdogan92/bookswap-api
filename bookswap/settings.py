@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookswap.user_profile',
     'bookswap.author',
+    'bookswap.offer',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
