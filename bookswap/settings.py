@@ -25,7 +25,7 @@ SECRET_KEY = 'whom)!5jf1iy9n=h5t4zxv8gr41g)#3@hlx3)kcpexe9ic(#77'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['enyakinkitap.com', 'api.enyakinkitap.com',]
 
 
 # Application definition
@@ -147,9 +147,9 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/Users/ufuk/Desktop/kitapTakip/static'
+STATIC_ROOT = '/webapps/enyakinkitap/api/static'
 
-MEDIA_ROOT = '/Users/ufuk/Desktop/kitapTakip/'
+MEDIA_ROOT = '/webapps/enyakinkitap/api/media'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIR = (
