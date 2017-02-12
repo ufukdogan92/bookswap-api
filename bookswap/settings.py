@@ -25,6 +25,15 @@ SECRET_KEY = 'whom)!5jf1iy9n=h5t4zxv8gr41g)#3@hlx3)kcpexe9ic(#77'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+
+CORS_ALLOW_METHODS = (
+        'GET',
+        'POST',
+        'PUT',
+)
+
+
 ALLOWED_HOSTS = ['*',]
 
 
