@@ -25,7 +25,7 @@ SECRET_KEY = 'whom)!5jf1iy9n=h5t4zxv8gr41g)#3@hlx3)kcpexe9ic(#77'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['enyakinkitap.com', 'api.enyakinkitap.com','127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
