@@ -7,6 +7,7 @@ import datetime
 class Author(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.TextField(max_length=50)
+    is_active = models.BooleanField(default=True)
     birthdate = models.DateField(blank=True, null=True,default=datetime.date.today)
 
     def __str__(self):

@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'whom)!5jf1iy9n=h5t4zxv8gr41g)#3@hlx3)kcpexe9ic(#77'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['enyakinkitap.com', 'api.enyakinkitap.com',]
+ALLOWED_HOSTS = ['enyakinkitap.com', 'api.enyakinkitap.com','127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -51,9 +51,12 @@ INSTALLED_APPS = [
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ), 
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.TokenAuthentication', 
     ),
     # rest auth throttle rate
     # django-rest-auth.readthedocs.io/en/latest/configuration.html#throttling
@@ -61,7 +64,8 @@ REST_FRAMEWORK = {
         'anon': '6/m',
         'register_view':'1/h',
     },
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': 100,
+    
 
 }
 

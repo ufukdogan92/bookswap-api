@@ -7,8 +7,7 @@ from rest_framework.authentication import TokenAuthentication
 from .models import Author
 from .serializers import AuthorSerializer
 
-class AuthorViewSet(viewsets.ModelViewSet):
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+class AuthorViewSet(viewsets.ModelViewSet): 
+    queryset = Author.objects.all()
     serializer_class = AuthorSerializer
 
