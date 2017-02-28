@@ -21,10 +21,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.authtoken import views
 from bookswap.offer.views import OfferViewSet
+from bookswap.user_profile.views import UserViewSet,UserProfileViewSet
 from bookswap.author.views import AuthorViewSet
 router = routers.DefaultRouter()
 router.register(r'offers', OfferViewSet)
 router.register(r'authors', AuthorViewSet) 
+router.register(r'users', UserViewSet) 
+router.register(r'user_profiles', UserProfileViewSet) 
 
 
 urlpatterns = [
