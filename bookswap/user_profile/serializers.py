@@ -14,4 +14,20 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 
+class GlobalSearchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('url','id', 'username', 'email', 'first_name', 'last_name',)
+
+    def to_native(self, obj):
+        if isinstance(obj, User):
+            serializer = UserSerializer(obj)
+        else:
+            raise Exception("Nothing found!")
+        return serializer.data
+
+
+
+
+
 

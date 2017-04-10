@@ -1,6 +1,6 @@
 #! -*- coding:utf-8 -*-
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User 
 import datetime
 from django.db.models.signals import post_save
 
@@ -30,6 +30,3 @@ class UserProfile(models.Model):
     class Meta:
         verbose_name ="Kullanıcı Profili"
         verbose_name_plural="Kullanıcı Profilleri"
-
-
-
