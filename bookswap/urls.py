@@ -20,7 +20,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.authtoken import views
-from bookswap.offer.views import OfferViewSet,OfferSearchList
+from bookswap.offer.views import OfferViewSet,OfferSearchList,OfferSearchUserList
 from bookswap.user_profile.views import UserViewSet,UserProfileViewSet,GlobalSearchList
 from bookswap.author.views import AuthorViewSet
 router = routers.DefaultRouter()
@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^user_search/$', GlobalSearchList.as_view(), name="search_user"),
     url(r'^offer_search/$', OfferSearchList.as_view(), name="search_offer"),
+    url(r'^offer_owner/$', OfferSearchUserList.as_view(), name="search_offer_owner"),
     url(r'^api-token-auth/', views.obtain_auth_token),
     url(r'^admin/', admin.site.urls),
     url(r'^rest-auth/', include('rest_auth.urls')),

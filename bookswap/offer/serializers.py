@@ -18,3 +18,18 @@ class OfferSearchSerializer(serializers.ModelSerializer):
         else:
             raise Exception("Nothing found!")
         return serializer.data
+
+
+class OfferSearchUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Offer
+        fields = '__all__'
+
+    def to_native(self, obj):
+        if isinstance(obj, Offer):
+            serializer = OfferSerializer(obj)
+        else:
+            raise Exception("Nothing found!")
+        return serializer.data
+
+
