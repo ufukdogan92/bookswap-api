@@ -33,10 +33,16 @@ class UserSearchList(generics.ListAPIView):
 
     def get_queryset(self):
         query = self.request.query_params.get('query', None)
+        
         qs = query.split(" ")
-        user = User.objects.filter(
-            Q(first_name__icontains=qs[0]) | Q(last_name__icontains=qs[1])
-        )
+        if len(qs)>1:
+            user = User.objects.filter(
+                Q(first_name__icontains=qs[0]) | Q(last_name__icontains=qs[1])
+            )
+        else:
+            user = User.objects.filter(
+                Q(first_name__icontains=qs[0])
+            )
 
         all_results = list(chain(user))
         return all_results
