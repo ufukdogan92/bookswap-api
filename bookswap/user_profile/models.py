@@ -13,7 +13,7 @@ def create_profile(sender, **kwargs):
 post_save.connect(create_profile, sender=User, dispatch_uid="users-profilecreation-signal")
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User,primary_key=True, related_name="userprofile")
+    user = models.ForeignKey(User,related_name="userprofile")
 
     GENDER_CHOICES = (
         ('M', 'Male'),
