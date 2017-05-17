@@ -6,14 +6,16 @@ from django.contrib.auth.models import User
 from .models import UserProfile
 from .serializers import UserProfileSerializer,UserSerializer,GlobalSearchSerializer,UserSearchSerializer
 from rest_framework.parsers import FileUploadParser
-from rest_framework.views import APIView
+from rest_framework.views import APIView 
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
 
-class UserProfileViewSet(viewsets.ModelViewSet):  
+class UserProfileViewSet(viewsets.ModelViewSet):   
+    renderer_classes = (JSONRenderer,)
+    parserers_classes = (JSONParser,)
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
- 
   
-    
 
 class UserViewSet(viewsets.ModelViewSet):  
     queryset = User.objects.all()
