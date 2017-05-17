@@ -5,10 +5,15 @@ from rest_framework import viewsets, mixins, generics
 from django.contrib.auth.models import User
 from .models import UserProfile
 from .serializers import UserProfileSerializer,UserSerializer,GlobalSearchSerializer,UserSearchSerializer
+from rest_framework.parsers import FileUploadParser
+from rest_framework.views import APIView
 
 class UserProfileViewSet(viewsets.ModelViewSet):  
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
+ 
+  
+    
 
 class UserViewSet(viewsets.ModelViewSet):  
     queryset = User.objects.all()
@@ -46,3 +51,5 @@ class UserSearchList(generics.ListAPIView):
 
         all_results = list(chain(user))
         return all_results
+
+
