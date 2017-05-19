@@ -22,7 +22,7 @@ class UserProfile(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES,blank=True, null=True)
     birthdate = models.DateField(blank=True, null=True,default=datetime.date.today)
     phone = models.CharField(max_length=12,blank=True, null=True)
-    image = models.ImageField(blank=True, null=True,upload_to="users")
+    image = models.ImageField(blank=True, null=True,upload_to="users/")
     
     def __str__(self):
         return self.user.username
